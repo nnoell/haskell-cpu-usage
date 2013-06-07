@@ -2,7 +2,7 @@
 -- Author      : Nnoell <nnoell3[at]gmail.com>                                            --
 -- Stability   : Unstable                                                                 --
 -- Portability : Unportable                                                               --
--- Desc        : simple haskell CPU usage monitor                                         --
+-- Desc        : Simple haskell CPU usage monitor                                         --
 -- Usage       : haskell-cpu-usage.out <number-of-cores>                                  --
 --               1 -> [cpu]                                                               --
 --               2 -> [cpu, cpu1]                                                         --
@@ -15,7 +15,7 @@ import Control.Concurrent (threadDelay)
 import System.Environment (getArgs)
 
 
--- | Default number of cores. EG:
+-- | Default number of cores
 defNumCores :: Int
 defNumCores = 5
 
@@ -59,9 +59,9 @@ percToStr xs = (concat [ (show x) ++ " " | x <- xs ]) ++ "\n"
 
 -- | Recursive cpu usage calculator
 recWritePerc :: Int        -- ^ number of cores
-			  -> [Integer] -- ^ previous idle values of all cores
-			  -> [Integer] -- ^ previous total values of all cores
-			  -> IO ()
+			 -> [Integer] -- ^ previous idle values of all cores
+			 -> [Integer] -- ^ previous total values of all cores
+			 -> IO ()
 recWritePerc ncpus pis pts = do
 	cpus <- cpuInfo ncpus
 	let results = zipWith (!!) [ zipWith (getPerc cpu) pis pts | cpu <- cpus ] [0..]

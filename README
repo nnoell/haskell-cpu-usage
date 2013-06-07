@@ -2,7 +2,7 @@
 Minimal application written in haskell which calculates cpu usage percent from /proc/stat.
 
 -- Compiling --
-$ ghc haskell-cpu-usage -o haskell-cpu-usage.out
+$ ghc haskell-cpu-usage.hs -o haskell-cpu-usage.out
 
 -- Usage --
 $ haskell-cpu-usage.out <number-of-cores>

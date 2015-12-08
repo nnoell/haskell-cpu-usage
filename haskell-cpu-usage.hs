@@ -1,7 +1,6 @@
 --------------------------------------------------------------------------------------------
 -- Author      : Nnoell <nnoell3[at]gmail.com>                                            --
--- Stability   : Unstable                                                                 --
--- Portability : Unportable                                                               --
+-- Stability   : Stable                                                                   --
 -- Desc        : Simple haskell CPU usage monitor                                         --
 -- Usage       : haskell-cpu-usage.out <number-of-cores>                                  --
 --               1 -> [cpu]                                                               --
